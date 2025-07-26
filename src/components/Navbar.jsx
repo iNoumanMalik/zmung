@@ -112,7 +112,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.95 }}
         >
           <RouterLink to="/contact">
-            <button className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-6 py-2 rounded-full font-medium neon-glow-pink">
+            <button className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-6 py-2 rounded-full font-medium relative neon-glow-rose">
               Let's Talk
             </button>
           </RouterLink>

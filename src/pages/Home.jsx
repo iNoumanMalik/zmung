@@ -270,9 +270,9 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background opacity-80 z-20"></div>
         </motion.div>
 
-        <div className="container mx-auto px-4 z-30 flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="container mx-auto z-30 flex flex-col lg:flex-row items-center justify-between gap-4">
           <motion.div
-            className="lg:w-1/2 text-center lg:text-left"
+            className="lg:w-1/2 px-16 text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -282,7 +282,7 @@ const Home = () => {
               <span className="relative bg-background px-4 py-1 rounded-md text-accent font-medium">DIGITAL MARKETING AGENCY</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="block">Elevate Your Brand With</span>
+              Elevate Your Brand With {" "}
               <span className="gradient-text">Strategic Digital Marketing</span>
             </h1>
             <p className="text-xl text-subtext mb-8 max-w-xl mx-auto lg:mx-0">
@@ -293,7 +293,7 @@ const Home = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link to="/contact" className="bg-gradient-to-r from-indigo-600 via-purple-600 to-rose-500 text-white px-8 py-3 rounded-full font-medium inline-block neon-glow-rose relative overflow-hidden group">
+                <Link to="/contact" className="bg-gradient-to-r from-indigo-600 via-purple-600 to-rose-500 text-white px-8 py-3 rounded-full font-medium inline-block  relative overflow-hidden group">
                   <span className="absolute top-0 left-0 w-full h-full bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>
                   <span className="relative z-10 flex items-center justify-center">
                     Get Started
@@ -395,7 +395,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-surface relative overflow-hidden" id="services">
+      <section className="py-20 px-4 bg-surface relative overflow-hidden" id="services">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>
@@ -456,7 +456,7 @@ const Home = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-background relative overflow-hidden" id="process">
+      <section className="py-20 px-4 bg-background relative overflow-hidden" id="process">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-surface to-transparent"></div>
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl"></div>
@@ -519,7 +519,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-surface relative overflow-hidden">
+      <section className="py-16 px-4 bg-surface relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl"></div>
@@ -546,7 +546,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-background relative overflow-hidden">
+      <section className="py-20 px-4 bg-background relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-surface to-transparent"></div>
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>
@@ -613,7 +613,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-surface relative overflow-hidden">
+      <section className="py-20 px-4 bg-surface relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl"></div>
