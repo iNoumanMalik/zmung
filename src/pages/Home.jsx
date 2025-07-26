@@ -207,22 +207,19 @@ const Home = () => {
   // Testimonials data
   const testimonials = [
     {
-      quote: 'Zmung Client transformed our online presence. Their strategic approach to digital marketing helped us increase our conversion rate by 150%.',
-      author: 'Sarah Johnson',
-      position: 'CEO, TechStart',
-      image: 'https://randomuser.me/api/portraits/women/1.jpg'
+      quote: 'Zmung Client transformed our online presence. Their strategic approach to digital marketing helped us increase our conversion rate by 150%. Thanks to the team. Cheers!',
+      author: 'Sayyam Tahir',
+      position: 'Founder, Noor-e-Jahan Oils',
     },
     {
       quote: 'The team at Zmung Client is incredibly talented. Their photography and design work has given our brand a fresh, modern look that our customers love.',
       author: 'Michael Chen',
-      position: 'Marketing Director, StyleCo',
-      image: 'https://randomuser.me/api/portraits/men/2.jpg'
+      position: 'Founder, StyleCo',
     },
     {
       quote: 'Working with Zmung Client has been a game-changer for our social media presence. They\'ve helped us grow our following and engagement significantly.',
       author: 'Emily Rodriguez',
       position: 'Social Media Manager, FoodDelight',
-      image: 'https://randomuser.me/api/portraits/women/3.jpg'
     }
   ];
 
@@ -595,11 +592,11 @@ const Home = () => {
                   </div>
                   <p className="text-text mb-6">{testimonial.quote}</p>
                   <div className="flex items-center">
-                    <img
+                    {/* <img
                       src={testimonial.image}
                       alt={testimonial.author}
                       className="w-12 h-12 rounded-full mr-4 transform group-hover:scale-110 transition-transform duration-300"
-                    />
+                    /> */}
                     <div>
                       <h4 className="font-semibold">{testimonial.author}</h4>
                       <p className="text-subtext text-sm">{testimonial.position}</p>
