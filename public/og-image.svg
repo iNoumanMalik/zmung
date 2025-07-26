@@ -1,0 +1,17 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  
+  <path d="M300 315L450 165L600 315L750 165" stroke="#FF4ECD" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M300 465L450 315L600 465L750 315" stroke="#302B63" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">ZMUNG CLIENT</text>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="36" fill="#b3b3b3" text-anchor="middle">Digital Marketing Agency</text>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F0C29"/>
+      <stop offset="50%" stop-color="#302B63"/>
+      <stop offset="100%" stop-color="#24243E"/>
+    </linearGradient>
+  </defs>
+</svg>
