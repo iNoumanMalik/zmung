@@ -6,13 +6,15 @@ const services = ['Strategy', 'Branding', 'Development', 'Marketing', 'Content',
 const getRandom = (min, max) => Math.random() * (max - min) + min;
 
 const FloatingBubbles = () => {
-  const [dimensions, setDimensions] = useState({ width: 1200, height: 800 });
+  const [dimensions, setDimensions] = useState({ width: 1200, height: 600 });
 
   useEffect(() => {
     const updateDimensions = () => {
+      // Get the hero section dimensions instead of full viewport
+      const heroHeight = window.innerHeight * 0.8; // Approximate hero section height
       setDimensions({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: heroHeight
       });
     };
 
@@ -22,26 +24,26 @@ const FloatingBubbles = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden w-screen h-screen">
+    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
       {services.map((service, index) => {
-        // Distribute bubbles across the entire viewport
+        // Distribute bubbles across the hero section container
         const positions = [
-          { x: getRandom(50, dimensions.width * 0.25), y: getRandom(50, dimensions.height * 0.5) },      // Top left
-          { x: getRandom(dimensions.width * 0.25, dimensions.width * 0.5), y: getRandom(50, dimensions.height * 0.3) }, // Top center
-          { x: getRandom(dimensions.width * 0.5, dimensions.width * 0.75), y: getRandom(dimensions.height * 0.2, dimensions.height * 0.6) }, // Top right
-          { x: getRandom(dimensions.width * 0.75, dimensions.width - 150), y: getRandom(50, dimensions.height * 0.4) }, // Far right
-          { x: getRandom(50, dimensions.width * 0.3), y: getRandom(dimensions.height * 0.5, dimensions.height - 150) }, // Bottom left
-          { x: getRandom(dimensions.width * 0.6, dimensions.width - 150), y: getRandom(dimensions.height * 0.6, dimensions.height - 150) } // Bottom right
+          { x: getRandom(50, dimensions.width * 0.2), y: getRandom(50, dimensions.height * 0.4) },      // Top left
+          { x: getRandom(dimensions.width * 0.2, dimensions.width * 0.4), y: getRandom(50, dimensions.height * 0.3) }, // Top center
+          { x: getRandom(dimensions.width * 0.4, dimensions.width * 0.65), y: getRandom(dimensions.height * 0.15, dimensions.height * 0.5) }, // Top right
+          { x: getRandom(dimensions.width * 0.65, dimensions.width * 0.9), y: getRandom(50, dimensions.height * 0.35) }, // Far right
+          { x: getRandom(50, dimensions.width * 0.25), y: getRandom(dimensions.height * 0.4, dimensions.height * 0.8) }, // Bottom left
+          { x: getRandom(dimensions.width * 0.55, dimensions.width * 0.9), y: getRandom(dimensions.height * 0.5, dimensions.height * 0.8) } // Bottom right
         ];
 
         const startPos = positions[index % positions.length];
 
-        // Create movement waypoints across the entire viewport
+        // Create movement waypoints within the hero section bounds
         const waypoints = [
           startPos,
-          { x: getRandom(100, dimensions.width - 200), y: getRandom(100, dimensions.height - 200) },
-          { x: getRandom(50, dimensions.width - 150), y: getRandom(50, dimensions.height - 150) },
-          { x: getRandom(100, dimensions.width - 200), y: getRandom(100, dimensions.height - 200) },
+          { x: getRandom(80, dimensions.width * 0.85), y: getRandom(80, dimensions.height * 0.75) },
+          { x: getRandom(50, dimensions.width * 0.8), y: getRandom(50, dimensions.height * 0.7) },
+          { x: getRandom(80, dimensions.width * 0.85), y: getRandom(80, dimensions.height * 0.75) },
           startPos
         ];
 
@@ -96,11 +98,11 @@ const FloatingBubbles = () => {
 
       {/* Smaller particles distributed in a grid across viewport */}
       {Array.from({ length: 15 }).map((_, index) => {
-        // Create a 5x3 grid distribution
+        // Create a 5x3 grid distribution within hero section bounds
         const gridCols = 5;
         const gridRows = 3;
-        const colWidth = dimensions.width / gridCols;
-        const rowHeight = dimensions.height / gridRows;
+        const colWidth = (dimensions.width * 0.9) / gridCols;
+        const rowHeight = (dimensions.height * 0.8) / gridRows;
 
         const col = index % gridCols;
         const row = Math.floor(index / gridCols);
@@ -110,8 +112,8 @@ const FloatingBubbles = () => {
 
         const particleWaypoints = [
           { x: gridX, y: gridY },
-          { x: getRandom(50, dimensions.width - 50), y: getRandom(50, dimensions.height - 50) },
-          { x: getRandom(50, dimensions.width - 50), y: getRandom(50, dimensions.height - 50) }
+          { x: getRandom(50, dimensions.width * 0.85), y: getRandom(50, dimensions.height * 0.75) },
+          { x: getRandom(50, dimensions.width * 0.85), y: getRandom(50, dimensions.height * 0.75) }
         ];
 
         const duration = getRandom(20, 35);
