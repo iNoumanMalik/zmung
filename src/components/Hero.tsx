@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   const services = [
@@ -102,31 +103,33 @@ const Hero: React.FC = () => {
           </div>
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 text-white text-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-            >
-              <Sparkles size={20} />
-              Explore Services
-            </motion.button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link to="/contact" className="bg-gradient-to-r from-indigo-600 via-purple-600 to-rose-500 text-white px-8 py-3 rounded-full font-medium inline-block  relative overflow-hidden group">
+                  <span className="absolute top-0 left-0 w-full h-full bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>
+                  <span className="relative z-10 flex items-center justify-center">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link to="/portfolio" className="relative overflow-hidden border border-primary/30 bg-background/50 backdrop-blur-sm text-text px-8 py-3 rounded-full font-medium inline-block group">
+                  <span className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                  <span className="relative z-10 flex items-center justify-center">
+                    View Our Work
+                    <ArrowRight className="ml-2 h-4 w-4 opacity-0 group-hover:opacity-100 transition-all transform translate-x-0 group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              </motion.div>
+            </div>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 rounded-full border-2 border-primary-500 text-primary-500 dark:text-primary-400 text-lg hover:bg-primary-500 hover:text-white transition-all duration-300"
-            >
-              Let's Talk
-            </motion.button>
-          </motion.div>
         </div>
       </div>
 

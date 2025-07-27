@@ -67,7 +67,7 @@ body {
 }
 
 .glass-effect {
-  @apply backdrop-blur-lg bg-white/5 dark:bg-dark-900/5 border border-white/10 dark:border-white/5;
+  @apply backdrop-blur-lg bg-white/5 dark:bg-dark-900/5 border border-white/10 dark:border-white/10;
 }
 
 
