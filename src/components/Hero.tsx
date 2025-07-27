@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, ArrowRight, Sparkles } from 'lucide-react';
+import FloatingBubbles from './FloatingBubbles';
 import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
@@ -12,25 +13,8 @@ const Hero: React.FC = () => {
     <>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 opacity-10"
-        >
-          {services.map((service, index) => (
-            <motion.div
-              key={service}
-              className="absolute w-20 h-20 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-white text-xs font-medium"
-              style={{
-                transform: `rotate(${(index * 360) / services.length}deg) translateX(150px) rotate(-${(index * 360) / services.length}deg)`,
-              }}
-              animate={{ rotate: -360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            >
-              {service}
-            </motion.div>
-          ))}
-        </motion.div>
+      <FloatingBubbles/>
+
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10
@@ -138,7 +122,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <div className="absolute bottom-0 left-0 right-0 flex justify-center">
           <motion.div
