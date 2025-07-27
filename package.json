@@ -11,6 +11,7 @@
     "start": "node run.js"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.2.6",
     "aos": "^2.3.4",
     "framer-motion": "^12.23.9",
     "lottie-react": "^2.4.1",
