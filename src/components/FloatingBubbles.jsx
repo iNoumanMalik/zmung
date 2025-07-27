@@ -52,7 +52,7 @@ const FloatingBubbles = () => {
   }
 
   return (
-    <div ref={containerRef} className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <div ref={containerRef} className="hidden md:block absolute inset-0 z-0 pointer-events-none overflow-hidden">
       {services.map((service, index) => {
         // Distribute bubbles across the hero section container
         const positions = [
