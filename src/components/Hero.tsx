@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
         <FloatingBubbles/>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 py-40 md:py-0 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Heading - Only animates on mount */}
           <motion.h1
