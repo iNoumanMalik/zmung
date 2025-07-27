@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const services = ['Strategy', 'Branding', 'Development', 'Marketing', 'Content', 'Support'];
@@ -7,6 +7,8 @@ const getRandom = (min, max) => Math.random() * (max - min) + min;
 
 const FloatingBubbles = () => {
   const [dimensions, setDimensions] = useState({ width: 1200, height: 600 });
+  const [isVisible, setIsVisible] = useState(true);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -18,13 +20,39 @@ const FloatingBubbles = () => {
       });
     };
 
+    // Intersection Observer to pause animations when not visible
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting && entry.intersectionRatio > 0.1);
+      },
+      {
+        threshold: [0, 0.1, 0.5],
+        rootMargin: '50px'
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
     updateDimensions();
     window.addEventListener('resize', updateDimensions);
-    return () => window.removeEventListener('resize', updateDimensions);
+
+    return () => {
+      window.removeEventListener('resize', updateDimensions);
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
   }, []);
 
+  // Don't render heavy animations if not visible
+  if (!isVisible) {
+    return <div ref={containerRef} className="absolute inset-0 z-0 pointer-events-none overflow-hidden" />;
+  }
+
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
       {services.map((service, index) => {
         // Distribute bubbles across the hero section container
         const positions = [
@@ -59,16 +87,19 @@ const FloatingBubbles = () => {
               opacity: 0,
               scale: 0.7
             }}
-            animate={{
+            animate={isVisible ? {
               x: waypoints.map(point => point.x),
               y: waypoints.map(point => point.y),
               opacity: [0, 0.6, 0.5, 0.6, 0.4, 0.6, 0.5, 0.4],
               scale: [0.7, 1, 0.9, 1.1, 0.95, 1.05, 0.9, 0.8],
               rotate: [0, 45, 90, 135, 180, 225, 270, 315, 360]
+            } : {
+              opacity: 0,
+              scale: 0.5
             }}
             transition={{
               duration,
-              repeat: Infinity,
+              repeat: isVisible ? Infinity : 0,
               ease: 'easeInOut',
               delay,
             }}
@@ -86,7 +117,8 @@ const FloatingBubbles = () => {
                 0 0 50px rgba(79, 70, 229, 0.4),
                 inset 0 0 50px rgba(255, 255, 255, 0.2)
               `,
-              filter: 'drop-shadow(0 12px 25px rgba(0, 0, 0, 0.4))'
+              filter: 'drop-shadow(0 12px 25px rgba(0, 0, 0, 0.4))',
+              willChange: 'transform, opacity'
             }}
           >
             <span className="text-center leading-tight tracking-wide font-bold z-10 drop-shadow-lg text-shadow-lg">
@@ -96,11 +128,11 @@ const FloatingBubbles = () => {
         );
       })}
 
-      {/* Smaller particles distributed in a grid across viewport */}
-      {Array.from({ length: 15 }).map((_, index) => {
-        // Create a 5x3 grid distribution within hero section bounds
-        const gridCols = 5;
-        const gridRows = 3;
+      {/* Reduce particles count and optimize */}
+      {Array.from({ length: 8 }).map((_, index) => {
+        // Create a smaller grid distribution within hero section bounds
+        const gridCols = 4;
+        const gridRows = 2;
         const colWidth = (dimensions.width * 0.9) / gridCols;
         const rowHeight = (dimensions.height * 0.8) / gridRows;
 
@@ -128,15 +160,18 @@ const FloatingBubbles = () => {
               y: particleWaypoints[0].y,
               opacity: 0
             }}
-            animate={{
+            animate={isVisible ? {
               x: particleWaypoints.map(point => point.x),
               y: particleWaypoints.map(point => point.y),
               opacity: [0, 0.4, 0.25, 0.4, 0.2, 0.35, 0],
               scale: [0.5, 1.4, 1, 1.7, 1.1, 1.3, 0.8]
+            } : {
+              opacity: 0,
+              scale: 0.3
             }}
             transition={{
               duration,
-              repeat: Infinity,
+              repeat: isVisible ? Infinity : 0,
               ease: 'easeInOut',
               delay,
             }}
@@ -152,7 +187,8 @@ const FloatingBubbles = () => {
                 )
               `,
               boxShadow: `0 0 40px rgba(99, 102, 241, 0.4)`,
-              filter: 'blur(0.5px)'
+              filter: 'blur(0.5px)',
+              willChange: 'transform, opacity'
             }}
           />
         );
