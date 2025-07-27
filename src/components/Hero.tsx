@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4"
           >
             <span className="gradient-text font-roboto">ZmungClient</span>
           </motion.h1>
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-[#969eaa] mb-8 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-[#969eaa] mb-4 max-w-2xl mx-auto"
           >
             "You bring the product — we bring the brand."
           </motion.p>

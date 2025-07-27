@@ -113,6 +113,14 @@ body {
     @apply bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent;
   }
 
+  .white-gray-gradient-text {
+    @apply bg-gradient-to-r from-white to-gray-800 bg-clip-text text-transparent;
+  }
+
+  .purple-gradient-text {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
 
 
   .custom-cursor {
