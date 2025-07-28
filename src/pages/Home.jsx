@@ -131,37 +131,37 @@ const Home = () => {
   // Services data
   const services = [
     {
-      icon: <Camera className="w-10 h-10 text-accent" />,
+      icon: <Camera className="w-10 h-10 text-accent-500" />,
       title: 'Photography',
       description: 'High-quality product photography that showcases your products in the best light.',
       link: '/photography'
     },
     {
-      icon: <Palette className="w-10 h-10 text-accent" />,
+      icon: <Palette className="w-10 h-10 text-accent-500" />,
       title: 'Design',
       description: 'Creative content and brand post creation that captures your audience\'s attention.',
       link: '/services#design'
     },
     {
-      icon: <Megaphone className="w-10 h-10 text-accent" />,
+      icon: <Megaphone className="w-10 h-10 text-accent-500" />,
       title: 'Digital Marketing',
       description: 'Strategic ad campaigns and performance marketing to drive results.',
       link: '/services#digital-marketing'
     },
     {
-      icon: <Code className="w-10 h-10 text-accent" />,
+      icon: <Code className="w-10 h-10 text-accent-500" />,
       title: 'Website Development',
       description: 'Modern, responsive websites that convert visitors into customers.',
       link: '/services#web-development'
     },
     {
-      icon: <MessageSquare className="w-10 h-10 text-accent" />,
+      icon: <MessageSquare className="w-10 h-10 text-accent-500" />,
       title: 'Social Media Management',
       description: 'Comprehensive social media management to grow your online presence.',
       link: '/services#social-media'
     },
     {
-      icon: <Briefcase className="w-10 h-10 text-accent" />,
+      icon: <Briefcase className="w-10 h-10 text-accent-500" />,
       title: 'Brand Strategy',
       description: 'Building a cohesive brand identity and positioning for long-term business growth.',
       link: '/services#brand-strategy'
@@ -252,7 +252,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-block mb-4">
-              <span className="bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium">WHAT WE DO</span>
+              <span className="bg-gray-500/10 text-white px-4 py-1 rounded-full text-sm font-medium">WHAT WE DO</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our <span className="gradient-text">Services</span>
@@ -278,17 +278,18 @@ const Home = () => {
 
                 {/* Card content */}
                 <div className="relative bg-background/80 backdrop-blur-sm border border-border rounded-xl p-8 h-full flex flex-col transition-all duration-300 group-hover:border-primary/30 z-10">
-                  <div className="mb-6 text-accent group-hover:text-primary transition-colors duration-300">{service.icon}</div>
+                  <div className="mb-6
+                  group-hover:text-primary transition-colors duration-300">{service.icon}</div>
                   <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                   <p className="text-subtext mb-6 flex-grow">{service.description}</p>
                   <Link
                     to={service.link}
-                    className="inline-flex items-center text-primary font-medium relative overflow-hidden group-hover:text-accent transition-colors duration-300"
+                    className="inline-flex items-center text-primary font-medium relative overflow-hidden group-hover:text-accent-500 transition-colors duration-300"
                   >
                     <span className="relative z-10 flex items-center">
                       Learn More <ArrowRight size={16} className="ml-2 transform group-hover:translate-x-2 transition-transform" />
                     </span>
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary/30 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent-500/30 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-1000"></span>
                   </Link>
                 </div>
               </motion.div>
@@ -313,7 +314,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-block mb-4">
-              <span className="bg-accent/10 text-accent px-4 py-1 rounded-full text-sm font-medium">HOW WE WORK</span>
+              <span className="bg-gray-500/10 text-white px-4 py-1 rounded-full text-sm font-medium">HOW WE WORK</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our <span className="gradient-text">Process</span>
@@ -403,7 +404,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-block mb-4">
-              <span className="bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium">TESTIMONIALS</span>
+              <span className="bg-gray-500/10 text-white px-4 py-1 rounded-full text-sm font-medium">TESTIMONIALS</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Client <span className="gradient-text">Feedback</span>
@@ -478,7 +479,7 @@ const Home = () => {
                 transition={{ duration: 0.6 }}
               >
                 <div className="inline-block mb-4">
-                  <span className="bg-accent/10 text-accent px-4 py-1 rounded-full text-sm font-medium">GET IN TOUCH</span>
+                  <span className="bg-gray-500/10 text-white px-4 py-1 rounded-full text-sm font-medium">GET IN TOUCH</span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   Ready to <span className="gradient-text">Transform</span> Your Digital Presence?
