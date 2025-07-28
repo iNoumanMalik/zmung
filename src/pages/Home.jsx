@@ -230,7 +230,7 @@ const Home = () => {
       <section
         ref={targetRef}
         id="hero"
-        className="min-h-screen h-full w-full flex items-center justify-centerbg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]
+        className="min-h-screen h-full w-full flex items-center justify-center 
  dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 relative overflow-hidden"
       >
       <Hero/>
