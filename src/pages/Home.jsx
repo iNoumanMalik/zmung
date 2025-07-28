@@ -131,37 +131,37 @@ const Home = () => {
   // Services data
   const services = [
     {
-      icon: <Camera className="w-10 h-10 text-accent-500" />,
+      icon: <Camera className="w-10 h-10 text-white" />,
       title: 'Photography',
       description: 'High-quality product photography that showcases your products in the best light.',
       link: '/photography'
     },
     {
-      icon: <Palette className="w-10 h-10 text-accent-500" />,
+      icon: <Palette className="w-10 h-10 text-white" />,
       title: 'Design',
       description: 'Creative content and brand post creation that captures your audience\'s attention.',
       link: '/services#design'
     },
     {
-      icon: <Megaphone className="w-10 h-10 text-accent-500" />,
+      icon: <Megaphone className="w-10 h-10 text-white" />,
       title: 'Digital Marketing',
       description: 'Strategic ad campaigns and performance marketing to drive results.',
       link: '/services#digital-marketing'
     },
     {
-      icon: <Code className="w-10 h-10 text-accent-500" />,
+      icon: <Code className="w-10 h-10 text-white" />,
       title: 'Website Development',
       description: 'Modern, responsive websites that convert visitors into customers.',
       link: '/services#web-development'
     },
     {
-      icon: <MessageSquare className="w-10 h-10 text-accent-500" />,
+      icon: <MessageSquare className="w-10 h-10 text-white" />,
       title: 'Social Media Management',
       description: 'Comprehensive social media management to grow your online presence.',
       link: '/services#social-media'
     },
     {
-      icon: <Briefcase className="w-10 h-10 text-accent-500" />,
+      icon: <Briefcase className="w-10 h-10 text-white" />,
       title: 'Brand Strategy',
       description: 'Building a cohesive brand identity and positioning for long-term business growth.',
       link: '/services#brand-strategy'
