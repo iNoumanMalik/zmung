@@ -54,80 +54,87 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={navbarVariants}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass backdrop-blur-md py-3' : 'py-5'}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? ' backdrop-blur-md py-3' : 'py-5'
+      }`}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
-        <RouterLink to="/" className="flex items-center">
+      <div className="container mx-auto px-4 flex justify-center items-center">
+        {/* Centered Navigation Container with Border */}
+        <div className="flex items-center space-x-1  backdrop-blur-md border border-gray-700/50 rounded-full px-6 py-3">
+          {/* Logo */}
+          <RouterLink to="/" className="flex items-center mr-6">
+            <motion.div
+              className="text-xl font-bold gradient-text"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Zmung
+            </motion.div>
+          </RouterLink>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-6">
+            {navItems.map(item =>
+              item.isScroll ? (
+                <ScrollLink
+                  key={item.name}
+                  to={item.path}
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className="cursor-pointer"
+                >
+                  <motion.span
+                    className="text-text hover:text-accent transition-colors text-sm font-medium"
+                    whileHover="hover"
+                    whileTap="tap"
+                    variants={linkVariants}
+                  >
+                    {item.name}
+                  </motion.span>
+                </ScrollLink>
+              ) : (
+                <RouterLink key={item.name} to={item.path}>
+                  <motion.span
+                    className="text-text hover:text-accent transition-colors text-sm font-medium"
+                    whileHover="hover"
+                    whileTap="tap"
+                    variants={linkVariants}
+                  >
+                    {item.name}
+                  </motion.span>
+                </RouterLink>
+              )
+            )}
+          </nav>
+
+          {/* CTA Button */}
           <motion.div
-            className="text-2xl font-bold gradient-text"
+            className="hidden md:block ml-6"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Zmung Client
-          </motion.div>
-        </RouterLink>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
-            item.isScroll ? (
-              <ScrollLink
-                key={item.name}
-                to={item.path}
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={500}
-                className="cursor-pointer"
+            <RouterLink to="/contact">
+              <button
+                className="bg-accent-500  px-4 py-2 ml-6 rounded-full font-medium text-sm"
               >
-                <motion.span
-                  className="text-text hover:text-accent transition-colors"
-                  whileHover="hover"
-                  whileTap="tap"
-                  variants={linkVariants}
-                >
-                  {item.name}
-                </motion.span>
-              </ScrollLink>
-            ) : (
-              <RouterLink key={item.name} to={item.path}>
-                <motion.span
-                  className="text-text hover:text-accent transition-colors"
-                  whileHover="hover"
-                  whileTap="tap"
-                  variants={linkVariants}
-                >
-                  {item.name}
-                </motion.span>
-              </RouterLink>
-            )
-          ))}
-        </nav>
+                Let's Talk
+              </button>
+            </RouterLink>
+          </motion.div>
 
-        {/* CTA Button */}
-        <motion.div
-          className="hidden md:block"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <RouterLink to="/contact">
-            <button className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-6 py-2 rounded-full font-medium relative neon-glow-rose">
-              Let's Talk
-            </button>
-          </RouterLink>
-        </motion.div>
-
-        {/* Mobile Menu Button */}
-        <motion.button
-          className="md:hidden text-text"
-          onClick={() => setIsOpen(!isOpen)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </motion.button>
+          {/* Mobile Menu Button */}
+          <motion.button
+            className="md:hidden text-text ml-4"
+            onClick={() => setIsOpen(!isOpen)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </motion.button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -141,7 +148,7 @@ const Navbar = () => {
             className="fixed inset-0 top-[72px] bg-background/95 backdrop-blur-lg z-40 md:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full space-y-8 p-4">
-              {navItems.map((item) => (
+              {navItems.map(item =>
                 item.isScroll ? (
                   <ScrollLink
                     key={item.name}
@@ -179,14 +186,14 @@ const Navbar = () => {
                     </motion.span>
                   </RouterLink>
                 )
-              ))}
+              )}
               <RouterLink
                 to="/contact"
                 className="w-full text-center"
                 onClick={() => setIsOpen(false)}
               >
                 <motion.button
-                  className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-8 py-3 rounded-full font-medium w-full neon-glow-pink"
+                  className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-8 py-3rounded-full font-medium w-full neon-glow-pink"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

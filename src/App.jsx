@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -17,41 +17,73 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import ThemeToggle from './components/ThemeToggle';
+import IntroAnimation from './components/IntroAnimation';
 
 function App() {
-  // Initialize AOS animations
+  const [showIntro, setShowIntro] = useState(true);
+  const [showMainContent, setShowMainContent] = useState(false);
+
   useEffect(() => {
+    // Initialize AOS animations
     AOS.init({
       duration: 800,
       once: false,
       mirror: true,
     });
+
+    // Show IntroAnimation for 3 seconds
+    const timer = setTimeout(() => {
+      setShowIntro(false);
+      setTimeout(() => {
+        setShowMainContent(true);
+      }, 500); // Optional delay for smooth transition
+    }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-      <div className="min-h-screen bg-background text-text">
-        <Navbar />
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/photography" element={<Photography />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </AnimatePresence>
+    <div className="min-h-screen bg-background text-text relative overflow-hidden">
+      {/* Intro Animation */}
+      <AnimatePresence mode="wait">
+        {showIntro && (
+          <IntroAnimation key="intro" onComplete={() => setShowIntro(false)} />
+        )}
+      </AnimatePresence>
 
-        <Footer />
+      {/* Main Content */}
+      <AnimatePresence>
+        {showMainContent && (
+          <motion.div
+            key="main-content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
+          >
+            <Navbar />
 
-        {/* Back to Top Button */}
-        <BackToTop />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/photography" element={<Photography />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
 
-        {/* Theme Toggle Button */}
-        <div className="fixed bottom-8 left-8 z-50">
-          <ThemeToggle />
-        </div>
-      </div>
+            <Footer />
+
+            {/* Back to Top Button */}
+            <BackToTop />
+
+            {/* Theme Toggle Button */}
+            <div className="fixed bottom-8 left-8 z-50">
+              <ThemeToggle />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 
