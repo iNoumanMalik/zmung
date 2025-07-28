@@ -326,7 +326,7 @@ const Home = () => {
 
           <div className="relative">
             {/* Process Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary/30 via-accent/30 to-primary/30 hidden md:block"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary-500/30 via-accent-500/30 to-primary-500/30 hidden md:block"></div>
 
             {/* Process Steps */}
             <div className="space-y-12 relative">
@@ -341,14 +341,14 @@ const Home = () => {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="md:w-1/2 flex justify-center mb-6 md:mb-0">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 flex items-center justify-center text-3xl font-bold gradient-text z-10 shadow-lg shadow-accent/10">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 flex items-center justify-center text-3xl font-bold gradient-text z-10 shadow-lg shadow-primary-500/10">
                       {step.number}
                     </div>
                   </div>
                   <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                     <div className="bg-surface/80 backdrop-blur-sm border border-border p-6 rounded-lg shadow-md transition-all duration-300 hover:border-accent/30 relative overflow-hidden group">
                       {/* Decorative gradient corner */}
-                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-accent-500/20 via-primary-500/20 to-accent-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
                       <h3 className="text-2xl font-semibold mb-3 relative z-10">{step.title}</h3>
                       <p className="text-subtext relative z-10">{step.description}</p>
@@ -373,14 +373,14 @@ const Home = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="text-center p-6 rounded-xl backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300"
+                className="text-center p-6 rounded-xl backdrop-blur-sm border shadow-md border-border/50 hover:shadow-lg transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="text-4xl font-bold mb-2 gradient-text">{stat.value}</div>
+                <div className="text-4xl font-bold mb-2 text-accent-500">{stat.value}</div>
                 <div className="text-subtext uppercase tracking-wider text-sm font-medium">{stat.label}</div>
               </motion.div>
             ))}
@@ -430,7 +430,7 @@ const Home = () => {
 
                 {/* Card content */}
                 <div className="relative bg-surface/80 backdrop-blur-sm border border-border rounded-xl p-8 h-full transition-all duration-300 group-hover:border-accent/30 z-10">
-                  <div className="mb-6 text-accent">
+                  <div className="mb-6 text-primary-500">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
                       <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
