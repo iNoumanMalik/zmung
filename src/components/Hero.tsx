@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
         <FloatingBubbles/>
       </div>
 
-      <div className="container mx-auto px-4 py-40 md:py-0 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto mt-12 px-4 py-40 md:py-0 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Heading - Only animates on mount */}
           <motion.h1
@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="hidden md:block absolute bottom-6 left-1/2 transform -translate-x-1/2"
       >
         <div className="absolute bottom-0 left-0 right-0 flex justify-center">
           <motion.div
