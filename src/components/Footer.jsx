@@ -20,8 +20,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-surface pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div className="container mx-auto px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold mb-6 gradient-text">Zmung Client</h3>
@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold mb-6 text-text">Quick Links</h4>
             <ul className="space-y-3">
               <li>
@@ -137,7 +137,7 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact Info */}
           <div>

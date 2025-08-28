@@ -20,6 +20,7 @@ export default {
         roboto: ['Roboto', 'sans-serif'], 
       },
       colors: {
+        // Dark mode colors (default)
         background: '#0f172a',
         surface: '#1e293b',
         primary: '#8b5cf6',
@@ -34,6 +35,14 @@ export default {
         warning: '#f59e0b',
         error: '#ef4444',
         info: '#3b82f6',
+        // Light mode colors
+        'light-background': '#ffffff',
+        'light-surface': '#f8fafc',
+        'light-primary': '#3b82f6',
+        'light-accent': '#1d4ed8',
+        'light-text': '#1e293b',
+        'light-subtext': '#64748b',
+        'light-border': '#e2e8f0',
         indigo: {
           600: '#4f46e5',
           500: '#6366f1',
