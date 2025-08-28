@@ -145,15 +145,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin size={20} className="text-primary-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-subtext">123 Marketing Street, Digital City, DC 12345</span>
+                <span className="text-subtext">Block 5 Street 40, I&T Center G-10/4, Islamabad</span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="text-primary-500 mr-3 flex-shrink-0" />
-                <span className="text-subtext">+1 (555) 123-4567</span>
+                <span className="text-subtext">+92 334 5012077</span>
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-primary-500 mr-3 flex-shrink-0" />
-                <span className="text-subtext">hello@zmungclient.com</span>
+                <span className="text-subtext">contact@zmungclient.com</span>
               </li>
             </ul>
           </div>

@@ -897,7 +897,7 @@ const Home = () => {
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
-                        <p className="text-gray-300">hello@zmungclient.com</p>
+                        <p className="text-gray-300">contact@zmungclient.com</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
@@ -906,7 +906,7 @@ const Home = () => {
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold text-white mb-1">Phone</h4>
-                        <p className="text-gray-300">+1 (555) 123-4567</p>
+                        <p className="text-gray-300">+92 334 5012077</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
@@ -915,7 +915,7 @@ const Home = () => {
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold text-white mb-1">Office</h4>
-                        <p className="text-gray-300">New York, NY</p>
+                        <p className="text-gray-300">Block 5 Street 40, I&T Center G-10/4, Islamabad</p>
                       </div>
                     </div>
                   </div>
