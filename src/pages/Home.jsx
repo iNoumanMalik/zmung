@@ -225,6 +225,23 @@ const Home = () => {
     touchDeltaX.current = 0;
   };
 
+  // Keyboard navigation (Left/Right) when services is visible
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const el = hSectionRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const visible = rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25;
+      if (!visible) return; // ignore when section not on screen
+      e.preventDefault();
+      if (e.key === 'ArrowRight') setCurrentIndex((i) => Math.min(i + 1, slidesCount - 1));
+      if (e.key === 'ArrowLeft') setCurrentIndex((i) => Math.max(i - 1, 0));
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [slidesCount]);
+
   // Helper for per-slide animation feel
   const slideActiveStyle = i => ({
     scale: i === currentIndex ? 1 : 0.96,
@@ -424,6 +441,9 @@ const Home = () => {
         {/* Slider viewport */}
         <div
           className="relative h-screen overflow-hidden"
+          role="region"
+          aria-label="Services slider"
+          tabIndex={0}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
