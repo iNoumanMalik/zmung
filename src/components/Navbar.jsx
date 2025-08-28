@@ -27,9 +27,9 @@ const Navbar = () => {
 
   // Navigation items
   const navItems = [
+    { name: 'About', path: isHomePage ? 'about' : '/about', isScroll: isHomePage },
     { name: 'Services', path: isHomePage ? 'services' : '/services', isScroll: isHomePage },
     { name: 'Process', path: isHomePage ? 'process' : '/#process', isScroll: isHomePage },
-    { name: 'About Us', path: isHomePage ? 'about' : '/about', isScroll: isHomePage },
     { name: 'Contact', path: isHomePage ? 'contact' : '/contact', isScroll: isHomePage },
   ];
 

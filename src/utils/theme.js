@@ -22,21 +22,22 @@ export const themeColors = {
     neonBlue: '#00c3ff'
   },
   light: {
-    background: '#f8f9fa',
-    surface: '#ffffff',
-    primary: '#6366f1',
-    accent: '#d946ef',
+    background: '#ffffff',
+    surface: '#f8fafc',
+    primary: '#3b82f6',
+    accent: '#1d4ed8',
     text: '#1e293b',
     subtext: '#64748b',
     border: '#e2e8f0',
     // Status colors
-    success: '#10b981',
-    warning: '#f59e0b',
-    error: '#ef4444',
-    info: '#3b82f6',
-    // Neon accents (adjusted for light theme)
-    neonGreen: '#059669',
-    neonBlue: '#0284c7'
+    success: '#059669',
+    warning: '#d97706',
+    error: '#dc2626',
+    info: '#0284c7',
+    // Blue theme accents for light mode
+    neonBlue: '#3b82f6',
+    neonIndigo: '#1d4ed8',
+    neonSky: '#0ea5e9'
   }
 };
 
