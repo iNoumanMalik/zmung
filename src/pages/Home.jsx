@@ -413,7 +413,11 @@ const Home = () => {
       </section>
 
       {/* Services Section - Arrow + Swipe slider */}
-      <section id="services" ref={hSectionRef} className="relative">
+      <section id="services" ref={hSectionRef} className="relative overflow-hidden bg-background">
+        {/* Blur transitions */}
+        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-surface to-transparent z-10"></div>
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent z-10"></div>
+        
         {/* Decorative */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl"></div>
@@ -626,7 +630,7 @@ const Home = () => {
       {/* Process Section */}
       <section className="py-20 px-4 bg-background relative overflow-hidden" id="process">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-surface to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent z-10"></div>
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
 
