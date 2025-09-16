@@ -94,8 +94,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link to="/contact" className="bg-gradient-to-r from-indigo-600 via-purple-600 to-rose-500 text-white px-8 py-3 rounded-full font-medium inline-block relative overflow-hidden group">
-                <span className="absolute top-0 left-0 w-full h-full bg-white/10 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></span>
+              <Link to="/contact" className="bg-gradient-to-r from-indigo-600 via-purple-600 to-rose-500 text-white px-8 py-3 rounded-full font-medium inline-block transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 relative overflow-hidden group">
                 <span className="relative z-10 flex items-center justify-center">
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -106,8 +105,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link to="/portfolio" className="relative overflow-hidden border border-primary/30 bg-background/50 backdrop-blur-sm text-text px-8 py-3 rounded-full font-medium inline-block group">
-                <span className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+              <Link to="/portfolio" className="border border-primary/30 bg-background/50 backdrop-blur-sm text-text px-8 py-3 rounded-full font-medium inline-block group transition-all duration-300 hover:bg-primary/10 hover:border-primary/50 hover:scale-105">
                 <span className="relative z-10 flex items-center justify-center">
                   View Our Work
                   <ArrowRight className="ml-2 h-4 w-4 opacity-0 group-hover:opacity-100 transition-all transform translate-x-0 group-hover:translate-x-1" />

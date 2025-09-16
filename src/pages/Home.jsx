@@ -327,8 +327,8 @@ const Home = () => {
 
       <section className="py-16 px-4 bg-surface relative overflow-hidden" id="about">
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/8 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent/8 rounded-full blur-3xl"></div>
         <div className="container mx-auto px-4 max-w-4xl ">
           <motion.div
             className="text-center mb-12"
@@ -340,7 +340,7 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               About <span className="gradient-text">Zmung</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-subtext max-w-2xl mx-auto leading-relaxed">
               We’ve built a complete in-house ecosystem where all your brand’s needs flow seamlessly
               under one roof.
             </p>
@@ -417,7 +417,7 @@ const Home = () => {
         {/* Blur transitions */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-surface to-transparent z-10"></div>
         <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent z-10"></div>
-        
+
         {/* Decorative */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl"></div>
@@ -432,7 +432,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <span className="inline-block mb-3 bg-gray-500/10 text-white px-4 py-1 rounded-full text-sm font-medium">
+              <span className="inline-block mb-3 bg-surface-light/60 text-text px-4 py-1 rounded-full text-sm font-medium border border-border/30">
                 WHAT WE DO
               </span>
               <h2 className="text-3xl md:text-4xl font-bold">
@@ -589,7 +589,7 @@ const Home = () => {
               onClick={prev}
               disabled={currentIndex === 0}
               aria-label="Previous slide"
-              className="pointer-events-auto h-11 w-11 md:h-12 md:w-12 rounded-full bg-white/10 backdrop-blur-md border border-white/15 grid place-items-center text-white disabled:opacity-40"
+              className="pointer-events-auto h-12 w-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center"
             >
               <svg
                 width="18"
@@ -608,7 +608,7 @@ const Home = () => {
               onClick={next}
               disabled={currentIndex === slidesCount - 1}
               aria-label="Next slide"
-              className="pointer-events-auto h-11 w-11 md:h-12 md:w-12 rounded-full bg-white/10 backdrop-blur-md border border-white/15 grid place-items-center text-white disabled:opacity-40"
+              className="pointer-events-auto h-12 w-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-110 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center"
             >
               <svg
                 width="18"
@@ -631,8 +631,8 @@ const Home = () => {
       <section className="py-20 px-4 bg-background relative overflow-hidden" id="process">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent z-10"></div>
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-secondary/8 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-accent-light/8 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -643,7 +643,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-block mb-4">
-              <span className="bg-gray-500/10 text-white px-4 py-1 rounded-full text-sm font-medium">
+              <span className="bg-surface-light/60 text-text px-4 py-1 rounded-full text-sm font-medium border border-border/30">
                 HOW WE WORK
               </span>
             </div>
@@ -657,7 +657,7 @@ const Home = () => {
 
           <div className="relative">
             {/* Process Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary-500/30 via-accent-500/30 to-primary-500/30 hidden md:block"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-400 via-purple-400  hidden md:block z-10"></div>
 
             {/* Process Steps */}
             <div className="space-y-12 relative">
@@ -674,7 +674,7 @@ const Home = () => {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="md:w-1/2 flex justify-center mb-6 md:mb-0">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 flex items-center justify-center text-3xl font-bold gradient-text z-10 shadow-lg shadow-primary-500/10">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/25 via-accent/25 to-primary/25 flex items-center justify-center text-3xl font-bold gradient-text z-10 shadow-lg shadow-primary/20 border border-primary/20">
                       {step.number}
                     </div>
                   </div>
@@ -685,7 +685,7 @@ const Home = () => {
                   >
                     <div className="bg-surface/80 backdrop-blur-sm border border-border p-6 rounded-lg shadow-md transition-all duration-300 hover:border-accent/30 relative overflow-hidden group">
                       {/* Decorative gradient corner */}
-                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-accent-500/20 via-primary-500/20 to-accent-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+                      <div className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-accent/25 via-primary/25 to-accent/15 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
                       <h3 className="text-2xl font-semibold mb-3 relative z-10">{step.title}</h3>
                       <p className="text-subtext relative z-10">{step.description}</p>
@@ -702,8 +702,8 @@ const Home = () => {
       <section className="py-16 px-4 bg-surface relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent/8 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/8 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -717,7 +717,7 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="text-4xl font-bold mb-2 text-accent-500">{stat.value}</div>
+                <div className="text-4xl font-bold mb-2 text-accent">{stat.value}</div>
                 <div className="text-subtext uppercase tracking-wider text-sm font-medium">
                   {stat.label}
                 </div>
@@ -731,8 +731,8 @@ const Home = () => {
       <section className="py-20 px-4 bg-background relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-surface to-transparent"></div>
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/8 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/8 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -768,11 +768,11 @@ const Home = () => {
                 whileHover={{ y: -5 }}
               >
                 {/* Card background with hover effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-indigo-600/10 to-rose-500/10 rounded-xl opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-300 blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/12 via-primary/12 to-accent/12 rounded-xl opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-300 blur-sm"></div>
 
                 {/* Card content */}
                 <div className="relative bg-surface/80 backdrop-blur-sm border border-border rounded-xl p-8 h-full transition-all duration-300 group-hover:border-accent/30 z-10">
-                  <div className="mb-6 text-primary-500">
+                  <div className="mb-6 text-primary">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="48"
@@ -877,7 +877,7 @@ const Home = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg"
+                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
                 >
                   Send Message
                 </motion.button>
@@ -925,9 +925,9 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="bg-blue-900/20 p-6 rounded-lg border border-blue-800/30">
-                  <h4 className="text-lg font-semibold text-white mb-2">Quick Response</h4>
-                  <p className="text-gray-300 text-sm">
+                <div className="bg-primary/10 p-6 rounded-lg border border-primary/20">
+                  <h4 className="text-lg font-semibold text-text mb-2">Quick Response</h4>
+                  <p className="text-subtext text-sm">
                     We typically respond to all inquiries within 24 hours during business days.
                   </p>
                 </div>
@@ -941,8 +941,8 @@ const Home = () => {
       <section className="py-20 px-4 bg-surface relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-rose-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl"></div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent/8 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary/8 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="relative overflow-hidden">
@@ -950,7 +950,7 @@ const Home = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-background via-surface/80 to-background rounded-xl"></div>
 
             {/* Border gradient */}
-            <div className="absolute inset-0 rounded-xl p-[1px] bg-gradient-to-br from-indigo-600/30 via-purple-600/30 to-rose-500/30 backdrop-blur-sm"></div>
+            <div className="absolute inset-0 rounded-xl p-[1px] bg-gradient-to-br from-primary/40 via-secondary/40 to-accent/40 backdrop-blur-sm"></div>
 
             <div className="relative rounded-xl p-8 md:p-12 backdrop-blur-sm">
               <motion.div
@@ -961,7 +961,7 @@ const Home = () => {
                 transition={{ duration: 0.6 }}
               >
                 <div className="inline-block mb-4">
-                  <span className="bg-gray-500/10 text-white px-4 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-surface-light/60 text-text px-4 py-1 rounded-full text-sm font-medium border border-border/30">
                     GET IN TOUCH
                   </span>
                 </div>
@@ -979,7 +979,7 @@ const Home = () => {
                 >
                   <Link
                     to="/contact"
-                    className="relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium transition-all bg-gradient-to-br from-indigo-600 via-purple-600 to-rose-500 rounded-lg group"
+                    className="relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium transition-all duration-300 bg-gradient-to-br from-primary via-secondary to-accent rounded-lg text-white hover:shadow-xl hover:shadow-primary/30 hover:scale-105 glow-primary group"
                   >
                     <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-primary group-hover:translate-x-0 ease">
                       <ArrowRight className="h-5 w-5" />

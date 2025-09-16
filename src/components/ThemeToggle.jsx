@@ -36,15 +36,19 @@ const ThemeToggle = () => {
   return (
     <motion.button
       onClick={toggleTheme}
-      className={`p-2 rounded-full ${isDarkTheme ? 'bg-primary/30' : 'bg-amber-100'} transition-colors`}
+      className={`p-3 rounded-full transition-all duration-300 ${
+        isDarkTheme 
+          ? 'bg-primary/30 hover:bg-primary/40 neon-glow-purple' 
+          : 'bg-blue-100 hover:bg-blue-200 neon-glow-blue shadow-lg'
+      }`}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       aria-label={isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'}
     >
       {isDarkTheme ? (
-        <Sun size={20} className="text-amber-300" />
+        <Sun size={22} className="text-amber-300" />
       ) : (
-        <Moon size={20} className="text-indigo-700" />
+        <Moon size={22} className="text-blue-700" />
       )}
     </motion.button>
   );
